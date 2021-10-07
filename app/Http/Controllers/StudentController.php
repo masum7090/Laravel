@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
-use App\Teacher;
 
-class TeacherController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +13,10 @@ class TeacherController extends Controller
      */
     public function index()
     {
-
-        $teachers = Teacher::all();
-        return  $teachers;
-      
-    //        for ($i=0;$i<count($teachers);$i++) {
-    //        $arr = array ($teachers);
-    //  }
-    //     return $arr  ; 
-    // //    return $memu['name'];
-       
-    
+        $allstudent = Student::all();
+        return $allstudent;
+        
+        //
     }
 
     /**
@@ -35,8 +27,8 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        $addteacher = Teacher::create($request->all());
-        return  $addteacher;
+        $createStudent = Student::create($request->all());
+        return $createStudent;
         //
     }
 
@@ -48,7 +40,8 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        return Teacher::find($id);
+        $singleGet = Student::find($id);
+        return $singleGet;
         //
     }
 
@@ -61,9 +54,9 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $teacher = Teacher::find($id);
-        $teacher->update($request->all());
-        return $teacher;
+        $updateStudent = Student::find($id);
+        $updateStudent->update($request->all());
+        return $updateStudent;
         //
     }
 
@@ -75,8 +68,9 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        $deleteTeacher = Teacher::destroy($id);
-        return $deleteTeacher;
+        $deleteStudent = Student::destroy($id);
+        return $deleteStudent;
+
         //
     }
 }

@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Teacher; 
+use App\Teacher;
+use App\Student; 
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ use App\Teacher;
 //     return $request->user();
 // });
 Route::resource('teacher','TeacherController');
+Route::resource('student','StudentController');
